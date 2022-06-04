@@ -1,0 +1,64 @@
+</head>
+<body>
+<h1>Chart 예제 </h1>
+   <canvas id="myChart">
+   </canvas>
+</div>
+
+<div>
+ <button onclick=settype("line")>
+  라인</button>
+ <button onclick=settype("pie")>
+  파이</button>
+ <button onclick=settype("doughnut")>
+  도넛</button>
+ <button onclick=settype("bar")>
+  바</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const labels = [
+    '1월',
+    '2월',
+    '3월',
+    '4월',
+    '5월',
+    '6월',
+    '7월',
+    '8월',
+  ];
+
+    const data = {
+    labels: labels,
+    datasets: [{
+      label: '엄준식',
+      backgroundColor: 'rgb(255, 255, 255)',
+      borderColor: 'rgb(0, 0, 0)',
+      data: [320, 176, 64, 58, 1275, 123, 567, 555],
+    }]
+
+  const config = [
+    type: 'pie', // 'bar', 'doghunut', 'line', 'bar'
+    data: 'data',
+    options: ()
+  ];
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  funtion settype(t){
+  config.type=t
+  myChart.update()
+}
+   funtion adddata() {
+   data.datasets[0].data.push(Math.random(0)*100})
+   data.labels.push("new data")
+   myChart.update0
+ };
+  </script>
+  </body>
+  </html>
